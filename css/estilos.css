@@ -16,3 +16,7 @@ main {
     flex-wrap: wrap;
     align-items: center;
 }
+
+.btn {
+    width: 180px;
+}

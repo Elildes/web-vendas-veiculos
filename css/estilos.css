@@ -59,7 +59,8 @@ section {
     justify-content: center;
     align-items: center;
     border-style: solid;
-    border-color: aqua;
+    border-width: 6px;
+    border-color: #b7e1e4;
     border-radius: 25%;
     background-image: url('../img/porsche.jpg');
     background-size: 100%;
@@ -70,6 +71,10 @@ section {
     font-family: Montserrat-Bold;
     font-size: 20px;
     color: black;
+}
+
+.links-menus {
+    text-decoration: none;
 }
 
 /* Fontes */

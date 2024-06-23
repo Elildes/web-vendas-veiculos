@@ -13,6 +13,10 @@ main {
     flex-wrap: wrap;
 }
 
+#titulo {
+    margin-bottom: 20px;
+}
+
 #form-login {
     background-color: #f7f4ef;
     padding: 12px;

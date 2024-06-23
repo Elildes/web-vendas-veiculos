@@ -1,70 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>    
 
-    <header>
-        <div id="cabeca" >
-            <nav class="navbar">
-                <div class="container-fluid">
-                  <div>
-                    <img src="/img/logo.jpeg" width="40px" alt="Logo" style="border-radius: 25%;">
-                  <span class="text-logo">MultiCar Sales
-                  </span>
-                  </div>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Opções</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/menus.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/cadastro.html">Cadastrar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/buscar.html">Buscar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/excluir.html">Excluir</a>
-                        </li>
-                        <li class="nav-item">                            
-                            <a class="nav-link active" aria-current="page" href="/login.html">Sair</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </nav>            
-        </div>        
-    </header>
+<body>
 
-    <main>
-        <h2>Tela Cadastro</h2>
-    </main>
-
-    <footer id="rodape" class="fixed-bottom fw-light">
-        <div class="d-flex justify-content-around">
-            <p id="dev">
-                Desenvolvido por
-                <a href="https://github.com/Elildes/web-vendas-veiculos" target="_blank">Elildes Fortaleza Santos</a>
-            </p>
+  <header>
+    <div id="cabeca">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div>
+            <img src="/img/logo.jpeg" width="40px" alt="Logo" style="border-radius: 25%;">
+            <span class="text-logo">MultiCar Sales
+            </span>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Opções</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/menus.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/cadastro.html">Cadastrar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/buscar.html">Buscar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/excluir.html">Excluir</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/login.html">Sair</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>    
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="form-login">
+
+      <div id="titulo">
+        <h2>Cadastro de veículos</h2>
+      </div>
+
+      <form id="form-cadastro">
+
+        <div class="d-flex row">
+          <div class="mb-3 w-50">
+            <label for="marca" class="form-label">Marca do veículo:</label>
+            <input type="text" class="form-control" id="marca" placeholder="Digite a marca">
+          </div>
+          <div class="mb-3 w-50">
+            <label for="modelo" class="form-label">Modelo do veículo:</label>
+            <input type="text" class="form-control" id="modelo" placeholder="Digite o modelo">
+          </div>
+        </div>
+
+        <div class="d-flex row">
+          <div class="mb-3 w-50">
+            <label for="ano" class="form-label">Ano de fabricação:</label>
+            <input type="text" class="form-control" id="ano" placeholder="Digite o ano">
+          </div>
+          <div class="mb-3 w-50">
+            <label for="cor" class="form-label">Cor do veículo:</label>
+            <input type="text" class="form-control" id="cor" placeholder="Digite a cor">
+          </div>
+        </div>
+
+        <div class="d-flex row">
+          <div class="mb-3 w-50">
+            <label for="tipo" class="form-label">Tipo do veículo:</label>
+            <input type="text" class="form-control" id="tipo" placeholder="Digite a tipo">
+          </div>
+          <div class="mb-3 w-50">
+            <label for="kilometragem" class="form-label">Km do veículo:</label>
+            <input type="text" class="form-control" id="kilometragem" placeholder="Digite a kilometragem">
+          </div>
+        </div>
+
+        <div class="d-flex row">
+          <div class="mb-3 w-50">
+            <label for="portas" class="form-label">Quantidade de portas:</label>
+            <input type="text" class="form-control" id="portas" placeholder="Digite qtde. portas">
+          </div>
+          <div class="mb-3 w-50">
+            <label for="preco" class="form-label">Preço do veículo:</label>
+            <input type="text" class="form-control" id="preco" placeholder="Digite o preço">
+          </div>
+        </div>
+
+      </form>      
+
+      <div id="btn" class="d-flex justify-content-center">
+        <button id="btn-cadastrar" onclick="cadastrar()" type="button" class="btn btn-primary">Cadastrar</button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer id="rodape" class="fixed-bottom fw-light">
+    <div class="d-flex justify-content-around">
+      <p id="dev">
+        Desenvolvido por
+        <a href="https://github.com/Elildes/web-vendas-veiculos" target="_blank">Elildes Fortaleza Santos</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

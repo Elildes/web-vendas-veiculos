@@ -15,6 +15,8 @@ main {
 
 #titulo {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 #form-padrao {
@@ -95,4 +97,8 @@ section {
 #rodape{
     background-color: rgb(128, 187, 118);
     height: 48px;
+}
+
+#card-buscar {
+    width: 80%;
 }

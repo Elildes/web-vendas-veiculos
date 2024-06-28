@@ -1,9 +1,9 @@
-$(document).ready( () => {
+$(document).ready(() => {
     // Recuperar a String JSON do Local Storage e converter de volta para um vetor
     const veiculos = JSON.parse(localStorage.getItem('veiculos'));
 
     // Teste: print vetor
-    function testePrintVeiculos () {
+    function testePrintVeiculos() {
         console.log("Teste: vetor veículos: ");
         for (let index = 0; index < veiculos.length; index++) {
             console.log(veiculos[index].marca);
@@ -16,5 +16,18 @@ $(document).ready( () => {
             console.log(veiculos[index].preco);
         }
     }
-    
+
+    // Código para filtrar/exibir as linhas da tabela por string digitada
+    $("#input-form").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#codes-table tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    // Código para permitir apenas um 'form-check' selecionado de cada vez
+    $(".form-check-input").on('change', function () {
+        $(".form-check-input").not(this).prop('checked', false);
+    });
+
 })

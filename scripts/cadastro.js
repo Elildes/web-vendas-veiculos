@@ -51,8 +51,8 @@ $(document).ready( () => {
         // Armazena veículo no vetor
         veiculos.push(new Carro(marca, modelo, anoFabricacao, cor, tipo, kilometragem, numeroPortas, preco));
 
-        // Enviar dados cadastrados para a página buscar.html
-        //... codigo aqui ?? ...
+        // Armazenar o vetor como uma String JSON no Local Storage
+        localStorage.setItem('veiculos', JSON.stringify('veiculos'));
         
         // Teste: Cadastra veículos
         console.log('Teste: Função cadastrar ok!');

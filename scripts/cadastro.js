@@ -57,13 +57,13 @@ $(document).ready( () => {
         // Teste: Cadastra veículos
         console.log('Teste: Função cadastrar ok!');
 
-        // Limpa campos de entrada do formulário
-        $('#form-cadastro')[0].reset();
-
         // Teste:
         testePrintVeiculos();
 
-        alert('Veículo cadastrado com sucesso!');        
+        alert('Veículo cadastrado com sucesso!');
+        
+        // Limpa campos de entrada do formulário
+        $('#form-cadastro')[0].reset();
 
     }
     

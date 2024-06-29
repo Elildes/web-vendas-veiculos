@@ -3,7 +3,20 @@ $(document).ready(() => {
     const veiculos = JSON.parse(localStorage.getItem('veiculos'));
 
     // Inserir dados dos veículos na tabela
-    $("#dados-veiculos").text(veiculos[0].marca);
+    $("#dados-veiculos").text(veiculos[0].marca);    
+
+    // Código para filtrar/exibir as linhas da tabela por string digitada
+    $("#input-form").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#codes-table tbody tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    // Código para permitir apenas um 'form-check' selecionado de cada vez
+    $(".form-check-input").on('change', function () {
+        $(".form-check-input").not(this).prop('checked', false);
+    });
 
     // Teste: print vetor
     testePrintVeiculos(veiculos);
@@ -20,18 +33,5 @@ $(document).ready(() => {
             console.log(veiculos[index].preco);
         }
     }
-
-    // Código para filtrar/exibir as linhas da tabela por string digitada
-    $("#input-form").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $("#codes-table tbody tr").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
-
-    // Código para permitir apenas um 'form-check' selecionado de cada vez
-    $(".form-check-input").on('change', function () {
-        $(".form-check-input").not(this).prop('checked', false);
-    });
 
 })

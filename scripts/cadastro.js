@@ -1,6 +1,6 @@
 $(document).ready( () => {
     // vetor de veículos
-    const veiculos = [];
+    //const veiculos = [];
 
     // Evento para o botão "Cadastrar"
     $('#btn-cadastrar').on('click', cadastrar);
@@ -48,11 +48,17 @@ $(document).ready( () => {
             return;
         }
 
-        // Armazena veículo no vetor
-        veiculos.push(new Carro(marca, modelo, anoFabricacao, cor, tipo, kilometragem, numeroPortas, preco));
+        // Cria um objeto veículo
+        const novoVeiculo = new Carro(marca, modelo, anoFabricacao, cor, tipo, kilometragem, numeroPortas, preco);
 
-        // Armazenar o vetor como uma String JSON no Local Storage
-        localStorage.setItem('veiculos', JSON.stringify(veiculos));
+        // Obtém veículos existentes do localStorage (se houver)
+        const veiculosExistentes = JSON.parse(localStorage.getItem('veiculos') || '[]');
+
+        // Adiciona o novo veículo ao vetor de veículos
+        veiculosExistentes.push(novoVeiculo);
+
+        // Salva o vetor atualizado no localStorage
+        localStorage.setItem('veiculos', JSON.stringify(veiculosExistentes));
 
         // Teste: Recuperar a String JSON do Local Storage
         // const meuVetor = JSON.parse(localStorage.getItem('veiculos'));
@@ -62,7 +68,7 @@ $(document).ready( () => {
         console.log('Teste: Função cadastrar ok!');
 
         // Teste:
-        testePrintVeiculos();
+        testePrintVeiculos(veiculosExistentes);
 
         alert('Veículo cadastrado com sucesso!');
         
@@ -72,17 +78,17 @@ $(document).ready( () => {
     }
     
     // Teste: print vetor
-    function testePrintVeiculos () {
+    function testePrintVeiculos (veiculosExistentes) {
         console.log("Teste: vetor veículos: ");
-        for (let index = 0; index < veiculos.length; index++) {
-            console.log(veiculos[index].marca);
-            console.log(veiculos[index].modelo);
-            console.log(veiculos[index].anoFabricacao);
-            console.log(veiculos[index].cor);
-            console.log(veiculos[index].tipo);
-            console.log(veiculos[index].kilometragem);
-            console.log(veiculos[index].numeroPortas);
-            console.log(veiculos[index].preco);
+        for (let index = 0; index < veiculosExistentes.length; index++) {
+            console.log(veiculosExistentes[index].marca);
+            console.log(veiculosExistentes[index].modelo);
+            console.log(veiculosExistentes[index].anoFabricacao);
+            console.log(veiculosExistentes[index].cor);
+            console.log(veiculosExistentes[index].tipo);
+            console.log(veiculosExistentes[index].kilometragem);
+            console.log(veiculosExistentes[index].numeroPortas);
+            console.log(veiculosExistentes[index].preco);
         }
     }
 

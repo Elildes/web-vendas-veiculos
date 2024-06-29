@@ -1,6 +1,4 @@
 $(document).ready( () => {
-    // vetor de veículos
-    //const veiculos = [];
 
     // Evento para o botão "Cadastrar"
     $('#btn-cadastrar').on('click', cadastrar);

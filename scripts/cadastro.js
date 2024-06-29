@@ -52,7 +52,11 @@ $(document).ready( () => {
         veiculos.push(new Carro(marca, modelo, anoFabricacao, cor, tipo, kilometragem, numeroPortas, preco));
 
         // Armazenar o vetor como uma String JSON no Local Storage
-        localStorage.setItem('veiculos', JSON.stringify('veiculos'));
+        localStorage.setItem('veiculos', JSON.stringify(veiculos));
+
+        // Teste: Recuperar a String JSON do Local Storage
+        // const meuVetor = JSON.parse(localStorage.getItem('veiculos'));
+        // console.log('Teste vetorStorage: ' + meuVetor[0].marca);
         
         // Teste: Cadastra veículos
         console.log('Teste: Função cadastrar ok!');

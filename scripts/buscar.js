@@ -2,8 +2,12 @@ $(document).ready(() => {
     // Recuperar a String JSON do Local Storage e converter de volta para um vetor
     const veiculos = JSON.parse(localStorage.getItem('veiculos'));
 
+    // Inserir dados dos veículos na tabela
+    $("#dados-veiculos").text(veiculos[0].marca);
+
     // Teste: print vetor
-    function testePrintVeiculos() {
+    testePrintVeiculos(veiculos);
+    function testePrintVeiculos(veiculos) {
         console.log("Teste: vetor veículos: ");
         for (let index = 0; index < veiculos.length; index++) {
             console.log(veiculos[index].marca);

@@ -5,7 +5,9 @@ $(document).ready(() => {
     // Chama a função para exibir os veículos
     exibirVeiculos();
 
-    // Função para exibir os veículos na tabela
+    /**
+     * Chama a função para exibir os veículos
+     */ 
     function exibirVeiculos() {
         const tabelaBody = $("#codes-table tbody");
         tabelaBody.empty(); // Limpa a tabela antes de inserir os dados
@@ -42,7 +44,9 @@ $(document).ready(() => {
         }
     }
 
-    // Código para filtrar/exibir as linhas da tabela por string digitada
+    /**
+     * Filtrar/exibir as linhas da tabela por string digitada
+     */
     $("#input-form").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#codes-table tbody tr").filter(function () {
@@ -50,7 +54,9 @@ $(document).ready(() => {
         });
     });
 
-    // Código para permitir apenas um 'form-check' selecionado de cada vez
+    /**
+     * Código para permitir apenas um 'form-check' selecionado de cada vez
+     */
     $(".form-check-input").on('change', function () {
         if ($(this).prop('checked')) {
             $(".form-check-input").not(this).prop('checked', false);
@@ -65,11 +71,14 @@ $(document).ready(() => {
             $("#portas-card").text(veiculoSelecionado.numeroPortas);
             $("#preco-card").text(veiculoSelecionado.preco);
             
+            // Chama a função exibir card de veículos
             exibirCard();
         }
     });
     
-    // Função exibir card de veículos
+    /**
+     * Função exibir card de veículos
+     */ 
     function exibirCard() {
         const checkboxSelecionado = $(".form-check-input:checked").length > 0;
         if (checkboxSelecionado) {

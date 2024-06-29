@@ -1,11 +1,19 @@
 $(document).ready(() => {
+
+    // Evento para o botão excluir veículos
+    $('#btn-excluir').on('click', excluir);
+
     // Recuperar a String JSON do Local Storage e converter de volta para um vetor
     const veiculos = JSON.parse(localStorage.getItem('veiculos'));
 
-    // Chama a função para exibir os veículos
+    /**
+     * Chama a função para exibir os veículos
+     */ 
     exibirVeiculos();
 
-    // Função para exibir os veículos na tabela
+    /**
+     * Função os veículos
+     */
     function exibirVeiculos() {
         const tabelaBody = $("#codes-table tbody");
         tabelaBody.empty(); // Limpa a tabela antes de inserir os dados
@@ -42,7 +50,9 @@ $(document).ready(() => {
         }
     }
 
-    // Código para filtrar/exibir as linhas da tabela por string digitada
+    /**
+     * Filtrar/exibir as linhas da tabela por string digitada
+     */
     $("#input-form").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#codes-table tbody tr").filter(function () {
@@ -50,7 +60,9 @@ $(document).ready(() => {
         });
     });
 
-    // Código para permitir apenas um 'form-check' selecionado de cada vez
+    /**
+     * Código para permitir apenas um 'form-check' selecionado de cada vez
+     */
     $(".form-check-input").on('change', function () {
         if ($(this).prop('checked')) {
             $(".form-check-input").not(this).prop('checked', false);
@@ -66,6 +78,11 @@ $(document).ready(() => {
             $("#preco-card").text(veiculoSelecionado.preco);            
         }
     });
+
+    /**
+     * Função excluir veículo selecionado no checkbox
+     */
+    $('#btn-excluir').click()
     
     // Teste: print vetor
     testePrintVeiculos(veiculos);

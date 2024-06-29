@@ -99,6 +99,16 @@ section {
     height: 48px;
 }
 
+#tabela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #card-buscar {
     width: 80%;
+}
+
+#card-veiculos {
+    max-width: 540px;
 }

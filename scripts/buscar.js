@@ -34,6 +34,7 @@ $(document).ready(() => {
             });
         } else {
             // Caso não haja veículos cadastrados
+            $("#card-veiculos").html("");       // limpa o card de veículo selecionado
             $("#mensagem-veiculos").text("Nenhum veículo cadastrado!");
         }
     }
@@ -48,8 +49,28 @@ $(document).ready(() => {
 
     // Código para permitir apenas um 'form-check' selecionado de cada vez
     $(".form-check-input").on('change', function () {
-        $(".form-check-input").not(this).prop('checked', false);
+        if ($(this).prop('checked')) {
+            $(".form-check-input").not(this).prop('checked', false);
+            const index = $(this).closest('tr').index();
+            const veiculoSelecionado = veiculos[index];
+            $("#marca-card").text(veiculoSelecionado.marca);
+            $("#modelo-card").text(veiculoSelecionado.modelo);
+            // Outras atualizações de campos do card aqui
+            exibirCard();
+        }
     });
+    
+    // Função exibir card
+    function exibirCard() {
+        const checkboxSelecionado = $(".form-check-input:checked").length > 0;
+        if (checkboxSelecionado) {
+            // Exibir o card
+            $("#card-veiculos").show();
+        } else {
+            // Ocultar o card
+            $("#card-veiculos").hide();
+        }
+    }      
 
     // Teste: print vetor
     testePrintVeiculos(veiculos);

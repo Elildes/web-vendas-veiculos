@@ -2,8 +2,8 @@ $(document).ready(() => {
     // Recuperar a String JSON do Local Storage e converter de volta para um vetor
     const veiculos = JSON.parse(localStorage.getItem('veiculos'));
 
-    // Inserir dados dos veículos na tabela
-    $("#dados-veiculos").text(veiculos[0].marca);    
+    // Teste: Inserir dados dos veículos na tabela
+    //$("#dados-veiculos").text(veiculos[0].marca);   
 
     // Código para filtrar/exibir as linhas da tabela por string digitada
     $("#input-form").on("keyup", function () {

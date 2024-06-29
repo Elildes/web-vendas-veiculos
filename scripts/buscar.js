@@ -34,7 +34,10 @@ $(document).ready(() => {
             });
         } else {
             // Caso não haja veículos cadastrados
-            $("#card-veiculos").html("");       // limpa o card de veículo selecionado
+            //$("#card-veiculos").html("");       // limpa o card de veículo selecionado
+            
+            // Ocultar o card
+            $("#card-veiculos").hide();
             $("#mensagem-veiculos").text("Nenhum veículo cadastrado!");
         }
     }
@@ -76,7 +79,7 @@ $(document).ready(() => {
             // Ocultar o card
             $("#card-veiculos").hide();
         }
-    }      
+    }
 
     // Teste: print vetor
     testePrintVeiculos(veiculos);

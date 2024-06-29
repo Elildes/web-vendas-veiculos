@@ -55,12 +55,18 @@ $(document).ready(() => {
             const veiculoSelecionado = veiculos[index];
             $("#marca-card").text(veiculoSelecionado.marca);
             $("#modelo-card").text(veiculoSelecionado.modelo);
-            // Outras atualizações de campos do card aqui
+            $("#ano-card").text(veiculoSelecionado.anoFabricacao);
+            $("#cor-card").text(veiculoSelecionado.cor);
+            $("#tipo-card").text(veiculoSelecionado.tipo);
+            $("#km-card").text(veiculoSelecionado.kilometragem);
+            $("#portas-card").text(veiculoSelecionado.numeroPortas);
+            $("#preco-card").text(veiculoSelecionado.preco);
+            
             exibirCard();
         }
     });
     
-    // Função exibir card
+    // Função exibir card de veículos
     function exibirCard() {
         const checkboxSelecionado = $(".form-check-input:checked").length > 0;
         if (checkboxSelecionado) {

@@ -12,7 +12,7 @@ $(document).ready(() => {
     exibirVeiculos();
 
     /**
-     * Função os veículos
+     * Função exibir os veículos
      */
     function exibirVeiculos() {
         const tabelaBody = $("#codes-table tbody");
@@ -90,6 +90,11 @@ $(document).ready(() => {
 
             // Salva o vetor atualizado no localStorage
             localStorage.setItem('veiculos', JSON.stringify(veiculos));
+
+            /**
+             * Chama a função para exibir os veículos atualizados
+             */ 
+            exibirVeiculos();
 
             alert("Veículo excluído com sucesso!");
         } else {

@@ -82,7 +82,20 @@ $(document).ready(() => {
     /**
      * Função excluir veículo selecionado no checkbox
      */
-    $('#btn-excluir').click()
+    function excluir() {
+        const indexCheckBox = $('.form-check-input:checked').closest('tr').index();
+
+        if (indexCheckBox >= 0) {
+            veiculos.splice(indexCheckBox, 1); // Remove veículo
+
+            // Salva o vetor atualizado no localStorage
+            localStorage.setItem('veiculos', JSON.stringify(veiculos));
+
+            alert("Veículo excluído com sucesso!");
+        } else {
+            window.alert("Favor selecionar veículo!");
+        }
+    }
     
     // Teste: print vetor
     testePrintVeiculos(veiculos);
